@@ -48,6 +48,9 @@ public class Employee {
 	        this.joiningDate = joiningDate;
 	    }
 	  
+	  public Employee() {
+	       
+	    }
 	  
 	  
 	public int getId() {
