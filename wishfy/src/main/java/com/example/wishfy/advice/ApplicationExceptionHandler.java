@@ -23,4 +23,16 @@ public class ApplicationExceptionHandler {
 		return errorMap;
 	}
 
+	
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public Map<String, String> handleOtherExceptions(Exception ex) {
+        Map<String, String> errorMap = new HashMap<>();
+        errorMap.put("error", "Internal Server Error");
+        errorMap.put("message", ex.getMessage()); // Include the exception message for debugging if needed.
+        return errorMap;
+    }
+	
+	
 }

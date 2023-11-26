@@ -11,13 +11,13 @@ import com.example.wishfy.repository.EmployeeRepo;
 
 @Service
 public class EmployeeService {
+	@Autowired
+    EmployeeRepo employeeRepo;
 
-    private final EmployeeRepo employeeRepo;
-
-    @Autowired
-    public EmployeeService(EmployeeRepo employeeRepo) {
-        this.employeeRepo = employeeRepo;
-    }
+   
+//    public EmployeeService(EmployeeRepo employeeRepo) {
+//        this.employeeRepo = employeeRepo;
+//    }
 
     public void saveEmployee(Employee employee) {
         employeeRepo.save(employee);

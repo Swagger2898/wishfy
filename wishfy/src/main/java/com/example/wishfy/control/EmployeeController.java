@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.wishfy.model.Employee;
 import com.example.wishfy.service.EmployeeService;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class EmployeeController {
 
@@ -28,7 +30,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public ResponseEntity<Void> saveEmp(@RequestBody Employee e) {
+    public ResponseEntity<Void> saveEmp(@Valid @RequestBody Employee e) {
         employeeService.saveEmployee(e);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
